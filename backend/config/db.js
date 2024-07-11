@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const connectDB = async () => {
-  // replace with your database connection link
-  await mongoose.connect("#").then(() => console.log("DB connected"));
+  await mongoose
+    .connect(process.env.MONGO)
+    .then(() => console.log("DB connected"));
 };
